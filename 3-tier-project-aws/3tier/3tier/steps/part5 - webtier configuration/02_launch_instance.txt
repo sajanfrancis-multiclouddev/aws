@@ -1,0 +1,8 @@
+#launch an EC2 instance (web-tier-instance) in (private-app-sub-az1) subnet without public IP and 
+(web-tier-sg) security group with IAM role - (3tier-app-role)
+
+#login to EC2 instance as ec2-user
+sudo -su ec2-user
+
+#check connectivity to internet
+ping google.com

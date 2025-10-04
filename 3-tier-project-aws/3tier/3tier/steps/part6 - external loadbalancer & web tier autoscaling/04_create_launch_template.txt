@@ -1,0 +1,5 @@
+#create a launch template (web-tier-lt)
+
+a. AMI              - web-tier-ami
+b. Security Group   - web-tier-sg
+c. IAM Role         - 3tier-app-role

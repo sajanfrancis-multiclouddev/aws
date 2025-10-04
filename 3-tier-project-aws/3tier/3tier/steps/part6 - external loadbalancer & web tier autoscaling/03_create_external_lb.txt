@@ -1,0 +1,4 @@
+#create an internet facing application loadbalancer (web-tier-lb)
+
+a. subnets          - public-web-sub-az1 & public-web-sub-az2
+b. security group   - internet-facing-lb-sg

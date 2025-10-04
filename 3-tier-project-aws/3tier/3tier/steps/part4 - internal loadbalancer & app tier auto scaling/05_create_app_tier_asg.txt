@@ -1,0 +1,5 @@
+#create app tier auto scaling group (app-tier-asg)
+
+a. Launch Template              - app-tier-lt
+b. AZ & Subnets                 - private-app-sub-az1 & private-app-sub-az2
+c. Loadbalancer Target group    - app-tier-tg

@@ -1,0 +1,4 @@
+#Create a target group (app-tier-tg) without any instances
+
+a. Port         -   HTTP - 4000
+b. Health check - /health 

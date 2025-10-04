@@ -1,0 +1,5 @@
+#create a launch template (app-tier-lt)
+
+a. AMI              - app-tier-ami
+b. Security Group   - app-tier-sg
+c. IAM Role         - 3tier-app-role

@@ -1,0 +1,3 @@
+#edit application-code/nginx.conf (line58)
+
+#upload nginx.conf file and web-tier folder to s3

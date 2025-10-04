@@ -1,0 +1,37 @@
+#login to EC2 instance as ec2-user
+sudo -su ec2-user
+
+#check connectivity to internet
+ping google.com
+
+#install maridb
+sudo dnf install mariadb105 -y
+
+#connect to DB
+mysql -h <db-endpoint> -u admin -p
+
+#create database
+CREATE DATABASE webappdb;
+
+#verify databases
+SHOW DATABASES;
+
+#switch to database
+USE webappdb;    
+
+#create a table transactons
+CREATE TABLE IF NOT EXISTS transactions(id INT NOT NULL
+AUTO_INCREMENT, amount DECIMAL(10,2), description
+VARCHAR(100), PRIMARY KEY(id));    
+
+#verify table
+SHOW TABLES;    
+
+#insert data into table
+INSERT INTO transactions (amount,description) VALUES ('400','groceries');
+
+#query the data added to table
+SELECT * FROM transactions;
+
+#logout
+exit

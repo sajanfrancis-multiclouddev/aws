@@ -1,0 +1,4 @@
+#Create a target group (web-tier-tg) without any instances
+
+a. Port         -   HTTP - 80
+b. Health check - /health 

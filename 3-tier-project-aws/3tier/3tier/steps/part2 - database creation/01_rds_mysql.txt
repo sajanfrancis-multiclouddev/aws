@@ -1,0 +1,5 @@
+#create a database subnet group (db-subnet-group)
+
+    select AZ1 & AZ2 db subnets (private-db-sub-az1 & private-db-sub-az2)
+
+#create a RDS - mysql database instance (db-instance-3tier)

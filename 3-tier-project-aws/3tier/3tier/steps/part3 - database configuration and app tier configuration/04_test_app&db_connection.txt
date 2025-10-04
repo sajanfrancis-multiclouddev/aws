@@ -1,0 +1,5 @@
+#simple health check endpoint that tells us if the app is simply running
+curl http://localhost:4000/health
+
+#test connection to database 
+curl http://localhost:4000/transaction

@@ -1,0 +1,5 @@
+#create web tier auto scaling group (web-tier-asg)
+
+a. Launch Template              - web-tier-lt
+b. AZ & Subnets                 - public-web-sub-az1 & public-web-sub-az2
+c. Loadbalancer Target group    - web-tier-tg

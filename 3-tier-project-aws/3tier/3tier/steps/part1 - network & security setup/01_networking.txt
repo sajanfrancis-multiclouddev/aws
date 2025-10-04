@@ -1,0 +1,33 @@
+#Create a S3 bucket (3tier-app-ec)
+
+#Create an IAM Role (3tier-app-role) for EC2 with IAM Permissions(AmazonSSMManagedInstanceCore & AmazonS3ReadOnlyAccess)
+
+#Delete the Default VPC (optional)
+
+#Create a VPC (3tier-app-vpc) with CIDR - 10.0.0.0/16
+
+#Create 6 Subnets
+
+public-web-sub-az1     -   10.0.0.0/24
+private-app-sub-az1    -   10.0.10.0/24
+private-db-sub-az1     -   10.0.20.0/24
+public-web-sub-az2     -   10.0.30.0/24
+private-app-sub-az2    -   10.0.40.0/24
+private-db-sub-az2     -   10.0.50.0/24
+
+#Create Internet Gateway (3tier-app-igw) and attach it to VPC
+
+#Create two NAT Gateway's in Public Subnets (ngw-az1 in public-web-sub-az1) & (ngw-az2 in public-web-sub-az2)
+(it needs Elastic IP)
+
+#Rename main route table as (public-route-table) & 
+    1. add route - (0.0.0.0/0 - 3tier-app-igw)
+    2. associate subnets (public-web-sub-az1 & public-web-sub-az2)
+
+#Create a route table as (private-route-table-az1)
+    1. add route - (0.0.0.0/0 - ngw-az1)
+    2. associate subnet (private-app-sub-az1)
+
+#Create a route table as (private-route-table-az2)
+    1. add route - (0.0.0.0/0 - ngw-az2)
+    2. associate subnet (private-app-sub-az2)

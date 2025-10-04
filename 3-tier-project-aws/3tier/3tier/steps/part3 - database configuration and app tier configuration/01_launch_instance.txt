@@ -1,0 +1,4 @@
+#launch an EC2 instance (app-tier-instance) in (private-app-sub-az1) subnet without public IP and 
+(app-tier-sg) security group with IAM role - (3tier-app-role)
+
+#Connect to instance via SSM

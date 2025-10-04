@@ -1,0 +1,3 @@
+#create AMI (web-tier-ami) from Instance (web-tier-instance)
+
+(this will create AMI & Snapshot)

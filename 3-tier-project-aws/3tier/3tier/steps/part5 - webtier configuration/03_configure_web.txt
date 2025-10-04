@@ -1,0 +1,32 @@
+#install all of the necessary components needed to run front-end application
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+source ~/.bashrc
+nvm install 16
+nvm use 16
+
+#download web tier code from s3 bucket
+cd ~/
+aws s3 cp s3://3tier-app-ec/web-tier/ web-tier --recursive
+
+#navigate to the web-tier folder and create the build folder for the react app so we can serve our code
+cd ~/web-tier
+npm install 
+npm run build
+
+#install nginx 
+sudo dnf install nginx -y
+
+#configure NGINX
+cd /etc/nginx
+ls
+sudo rm nginx.conf
+sudo aws s3 cp s3://3tier-app-ec/nginx.conf .
+
+#restart Nginx
+sudo systemctl restart nginx
+
+#nginx has permission to access files 
+chmod -R 755 /home/ec2-user
+
+#make sure the service starts on boot
+sudo systemctl enable nginx

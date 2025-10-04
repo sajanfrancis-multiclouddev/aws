@@ -1,0 +1,12 @@
+#Delete Resources
+2 Autoscaling groups (Select web tier and app tier autoscaling groups and delete)
+2 Launch templates (select web tier and app tier launch templates click on delete) 
+2 Snapshots (Select web tier and app tier snapshots and delete)
+2 AMI’s (Select web tier and app tier AMI and deregister)
+2 load balancers (select Internet load balancer and internal loadbalancer and delete)
+2 target groups (Select Target groups - in Actions - Click on Delete)
+2 NAT gateways (Select 2 natgate ways, wait for few minutes and release 2 elastic IP's)
+Instances(Select all Instances and terminate)
+Database(Select Database and delete)
+s3 bucket (select S3 bucket empty bucket and delete bucket)
+VPC (select vpc and delete,it will delete subnets,internet gateway,route tables and security groups)

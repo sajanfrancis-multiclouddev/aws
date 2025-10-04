@@ -1,0 +1,4 @@
+#create an internal application loadbalancer (app-tier-lb)
+
+a. subnets          - private-app-sub-az1 & private-app-sub-az2
+b. security group   - internal-lb-sg

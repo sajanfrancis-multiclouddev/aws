@@ -1,0 +1,41 @@
+#edit application-code/app-tier/DbConfig.js from project directory
+(below is the sample)
+module.exports = Object.freeze({
+    DB_HOST : 'db-instance-3tier.c14kumog8gbf.ap-south-1.rds.amazonaws.com',
+    DB_USER : 'admin',
+    DB_PWD : 'jers17391',
+    DB_DATABASE : 'webappdb'
+});
+
+#upload app-tier folder to s3 bucket
+
+#install necessary components to run our backend application
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+source ~/.bashrc
+
+#install a compatible version of Node.js
+nvm install 16
+nvm use 16
+
+#PM2 is a daemon process manager that will keep our node.js app running when we exit the instance or if it is rebooted
+npm install -g pm2
+
+#download app tier code from s3 to local system
+cd ~/
+aws s3 cp s3://3tier-app-ec/app-tier/ app-tier --recursive
+
+#navigate to the app directory, install dependencies, and start the app with pm2
+cd ~/app-tier
+npm install
+pm2 start index.js
+
+#verify app is running correctly
+pm2 list
+
+#pm2 is just making sure our app stays running when we leave the SSM session. However, if the server is interrupted for some reason, we still want the app to start and keep running
+pm2 startup
+
+<copy the output command and execute>
+
+#save the current list of node processes with the following command
+pm2 save

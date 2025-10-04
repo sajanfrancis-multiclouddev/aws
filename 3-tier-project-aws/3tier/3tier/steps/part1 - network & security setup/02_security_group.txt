@@ -1,0 +1,11 @@
+#create 5 security groups and add inbound rules
+
+1. internet-facing-lb-sg    -   HTTP        - 0.0.0.0/0
+
+2. web-tier-sg              -   HTTP        - internet-facing-lb-sg
+
+3. internal-lb-sg           -   HTTP        - web-tier-sg
+
+4. app-tier-sg              -   4000/TCP    - internal-lb-sg
+
+5. db-tier-sg               -   3306/TCP    - app-tier-sg

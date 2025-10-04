@@ -1,0 +1,3 @@
+#create AMI (app-tier-ami) from Instance (app-tier-instance)
+
+(this will create AMI & Snapshot)
